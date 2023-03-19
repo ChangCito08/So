@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pregunta sobre Bedwars</title>
+    <style>
+      body {
+        background-color: #2d2d2d;
+        color: #e9e0ff;
+        font-family: Minecraft;
+      }
+      h1 {
+        text-align: center;
+        font-size: 36px;
+        margin-top: 50px;
+      }
+      p {
+        text-align: center;
+        font-size: 24px;
+        margin-top: 30px;
+      }
+      form {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+      }
+      input[type="radio"] {
+        display: none;
+      }
+      label {
+        display: block;
+        width: 80px;
+        height: 80px;
+        background-color: #6646af;
+        margin: 0 20px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 24px;
+        line-height: 80px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      label:hover {
+        background-color: #dfe2de;
+      }
+      input[type="radio"]:checked + label {
+        background-color: #c2ce24;
+        color: #ffffff;
+      }
+      #mensaje {
+        text-align: center;
+        font-size: 24px;
+        margin-top: 30px;
+        display: none;
+      }
+      #mensaje.mostrar {
+        display: block;
+      }
+    </style>
+    <script>
+      function mostrarMensaje() {
+        var mensaje = document.getElementById("mensaje");
+        mensaje.classList.add("mostrar");
+      }
+      function ocultarMensaje() {
+        var mensaje = document.getElementById("mensaje");
+        mensaje.classList.remove("mostrar");
+      }
+      function mostrarSi() {
+        mostrarMensaje();
+      }
+      function ocultarNo() {
+        ocultarMensaje();
+      }
+    </script>
+  </head>
+  <body>
+    <h1>¿Unos Bedwars?</h1>
+    <p>¿Te gustaría jugar Bedwars?</p>
+    <form>
+      <input type="radio" name="bedwars" value="si" id="si-option" onclick="mostrarSi()">
+      <label for="si-option">Sí</label>
+      <input type="radio" name="bedwars" value="no" id="no-option" disabled onclick="ocultarNo()">
+      <label for="no-option">No</label>
+    </form>
+    <p id="mensaje">¡Entra a Disc para jugar!</p>
+  </body>
+</html>
